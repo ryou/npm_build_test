@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:js": "./node_modules/.bin/browserify -e ./src/js/main.js -o ./dist/js/bundle.js",
+    "watch:js": "./node_modules/.bin/watch 'npm run build:js' ./src/js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browserify": "^14.3.0"
+    "browserify": "^14.3.0",
+    "watch": "^1.0.2"
   }
 }
