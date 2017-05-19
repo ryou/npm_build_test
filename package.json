@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sass": "./node_modules/.bin/node-sass ./src/sass -o ./dist/css",
+    "postcss": "./node_modules/.bin/postcss ./dist/**/*.css -b ./dist -d ./dist  --use autoprefixer",
     "build:js": "./node_modules/.bin/browserify -e ./src/js/main.js -o ./dist/js/bundle.js",
-    "build:css": "./node_modules/.bin/node-sass ./src/sass -o ./dist/css",
+    "build:css": "npm run sass && npm run postcss",
     "build": "npm run build:js && npm run build:css",
     "watch:js": "./node_modules/.bin/watch 'npm run build:js' ./src/js",
     "watch:css": "./node_modules/.bin/watch 'npm run build:css' ./src/sass",
@@ -14,8 +16,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^7.1.1",
     "browserify": "^14.3.0",
     "node-sass": "^4.5.3",
+    "postcss-cli": "^4.0.0",
     "watch": "^1.0.2"
   }
 }
