@@ -11,12 +11,15 @@
     "build": "npm run build:js && npm run build:css",
     "watch:js": "./node_modules/.bin/watch 'npm run build:js' ./src/js",
     "watch:css": "./node_modules/.bin/watch 'npm run build:css' ./src/sass",
-    "watch": "npm run watch:js & npm run watch:css"
+    "watch": "npm run watch:js & npm run watch:css",
+    "bs": "./node_modules/.bin/browser-sync start -s './dist' -f './dist'",
+    "start": "npm run watch & npm run bs"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
+    "browser-sync": "^2.18.11",
     "browserify": "^14.3.0",
     "node-sass": "^4.5.3",
     "postcss-cli": "^4.0.0",
