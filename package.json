@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "./node_modules/.bin/node-sass ./src/sass -o ./dist/css",
-    "postcss": "./node_modules/.bin/postcss ./dist/**/*.css -b ./dist -d ./dist  --use autoprefixer",
+    "postcss": "./node_modules/.bin/postcss ./dist/**/*.css -b ./dist -d ./dist --no-map --use autoprefixer",
     "build:js": "./node_modules/.bin/browserify -e ./src/js/main.js -o ./dist/js/bundle.js",
     "build:css": "npm run sass && npm run postcss",
     "build": "npm run build:js && npm run build:css",
