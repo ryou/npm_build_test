@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build:js": "./node_modules/.bin/browserify -e ./src/js/main.js -o ./dist/js/bundle.js",
+    "build:css": "./node_modules/.bin/node-sass ./src/sass -o ./dist/css",
     "watch:js": "./node_modules/.bin/watch 'npm run build:js' ./src/js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^14.3.0",
+    "node-sass": "^4.5.3",
     "watch": "^1.0.2"
   }
 }
